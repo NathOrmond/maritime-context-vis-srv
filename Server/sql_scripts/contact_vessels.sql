@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS contact_vessels(
+	contact_id BIGSERIAL NOT NULL REFERENCES contacts(contact_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	vessel_id BIGSERIAL NOT NULL REFERENCES vessels(vessel_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	PRIMARY KEY (contact_id, vessel_id)
+);
